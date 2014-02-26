@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # vim: set fileencoding=utf-8
 # run as root
@@ -26,7 +26,6 @@
 import easygui as eg
 import sys
 import os
-import urllib.request
 import latch
 
 from latchHelper import *
@@ -57,7 +56,7 @@ def pair_gui():
         eg.msgbox(msg="Token not found",title='Error')
         return
 
-    token = urllib.request.pathname2url(reply)
+    token = reply
     try:
         res = api.pair(token)
     except:
@@ -98,9 +97,8 @@ def unpair_gui():
         eg.msgbox(msg="Can't read latch_accounts file",title='Error')
         return;
 
-    accountIdUrl = urllib.request.pathname2url(accountId)
     try:
-        res = api.unpair(accountIdUrl)
+        res = api.unpair(accountId)
     except:
         eg.msgbox(msg="Some exception happened",title='Error')
         return

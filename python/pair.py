@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # vim: set fileencoding=utf-8
 # Run as root
@@ -25,7 +25,6 @@
 
 import sys
 import os
-import urllib.request
 import latch
 
 from latchHelper import *
@@ -65,7 +64,7 @@ if len(reply) != 6:
     print("Token not found")
     exit()
 
-token = urllib.request.pathname2url(reply);
+token = reply;
 try:
     res = api.pair(token)
 except:

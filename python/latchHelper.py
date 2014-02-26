@@ -27,6 +27,7 @@ import latch
 PLUGIN_NAME = "System - latch"
 
 LATCH_PATH = "/usr/lib/latch/"
+LATCH_SYSTEM_PATH = LATCH_PATH + "system/"
 
 LATCH_ACCOUNTS = LATCH_PATH + ".latch_accounts"
 LATCH_CONFIG =  "/etc/system-latch.conf"
@@ -38,21 +39,21 @@ PAM_CONFIG_FILE_2 = "/etc/pam.d/lightdm-autologin"
 
 LATCH_PAM_SO = "/lib/security/pam_latch.so"
 
-LATCH_PAM_CONFIG = "auth       required	    " + LATCH_PAM_SO + "    accounts=" + LATCH_ACCOUNTS + "    config=" + LATCH_CONFIG
+LATCH_PAM_CONFIG = "auth        required        " + LATCH_PAM_SO + "    accounts=" + LATCH_ACCOUNTS + "    config=" + LATCH_CONFIG
 
 PAIR_BIN = "/usr/bin/pairSYS"
 UNPAIR_BIN = "/usr/bin/unpairSYS"
 PLUGIN_BIN = "/usr/bin/latchSYS"
 SETTINGS_BIN = "/usr/sbin/config_latchSYS"
 
-LATCH_PLUGIN_GUI = LATCH_PATH + "latchPluginGUI.py"
-SETTINGS_PLUGIN_GUI = LATCH_PATH + "settingsGUI.py"
-PAIR_PLUGIN = LATCH_PATH + "pair.py"
-UNPAIR_PLUGIN = LATCH_PATH + "unpair.py"
-SETTINGS_PLUGIN = LATCH_PATH + "settings.py"
-LATCH_HELPER_PLUGIN = LATCH_PATH + "latchHelper.py"
+LATCH_PLUGIN_GUI = LATCH_SYSTEM_PATH + "latchPluginGUI.py"
+SETTINGS_PLUGIN_GUI = LATCH_SYSTEM_PATH + "settingsGUI.py"
+PAIR_PLUGIN = LATCH_SYSTEM_PATH + "pair.py"
+UNPAIR_PLUGIN = LATCH_SYSTEM_PATH + "unpair.py"
+SETTINGS_PLUGIN = LATCH_SYSTEM_PATH + "settings.py"
+LATCH_HELPER_PLUGIN = LATCH_SYSTEM_PATH + "latchHelper.py"
 
-LATCH_API = LATCH_PATH + "latch.py"
+LATCH_API = LATCH_SYSTEM_PATH + "latch.py"
 
 
 def getConfigParameter(name, configFile=LATCH_CONFIG):
@@ -153,7 +154,7 @@ def addAccount(user, accountId):
     if os.path.isfile(LATCH_ACCOUNTS):
         # add latch account
         f = open (LATCH_ACCOUNTS, "a")
-        f.write(user + ": " + accountId)
+        f.write(user + ": " + accountId + "\n")
         f.close();
     else:
         # add latch account  

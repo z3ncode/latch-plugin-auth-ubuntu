@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 # vim: set fileencoding=utf-8
 # Run as root
@@ -30,11 +30,11 @@ import shutil
 from latchHelper import *
 
 
-# Delete or comment: "auth       required	    /lib/security/pam_latch.so    accounts=PATH/.latch_accounts    config=/etc/system-latch.conf", manually from /etc/pam.d/lightdm and /etc/pam.d/lightdm-autologin.
+# Delete or comment: "auth       required        /lib/security/pam_latch.so    accounts=PATH/.latch_accounts    config=/etc/system-latch.conf", manually from /etc/pam.d/lightdm and /etc/pam.d/lightdm-autologin.
 
 
 # alternatively uncomment this
-'''
+
 if os.path.isfile(PAM_CONFIG_FILE_1):
     # read PAM config file
     f = open(PAM_CONFIG_FILE_1,"r");
@@ -57,14 +57,14 @@ if os.path.isfile(PAM_CONFIG_FILE_2):
         if line.find(LATCH_PAM_CONFIG) == -1 :
             f.write(line);
     f.close();
-'''
+
 
 if os.path.isfile(LATCH_ACCOUNTS):
     os.remove(LATCH_ACCOUNTS)
 if os.path.isfile(LATCH_CONFIG):
     os.remove(LATCH_CONFIG)
-if os.path.isdir(LATCH_PATH):
-    shutil.rmtree(LATCH_PATH)
+if os.path.isdir(LATCH_SYSTEM_PATH):
+    shutil.rmtree(LATCH_SYSTEM_PATH)
 if os.path.isfile(PAIR_BIN):
     os.remove(PAIR_BIN)
 if os.path.isfile(UNPAIR_BIN):

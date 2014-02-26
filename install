@@ -2,7 +2,7 @@
 
 cd python/
 find latch.conf
-sudo python3 setup.py -f latch.conf
+sudo python setup.py -f latch.conf
 cd ../include/
 gcc wrapper_pair.c -o pairSYS
 gcc wrapper_unpair.c -o unpairSYS
@@ -18,4 +18,4 @@ sudo chmod 0100 /usr/sbin/config_latchSYS
 cd ../pam/libpam/
 sudo make
 cd ../../easyGUI/
-sudo python3 setup.py install
+sudo python setup.py install
