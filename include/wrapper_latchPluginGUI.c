@@ -5,7 +5,7 @@
 
 int main( void )
 {
-   execl("/usr/lib/latch/latchPluginGUI.py", "latchPluginGUI.py", NULL);
+   execl("/usr/lib/latch/system/latchPluginGUI.py", "latchPluginGUI.py", NULL);
 
    return 0;
 }
