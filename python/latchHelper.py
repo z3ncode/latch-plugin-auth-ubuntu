@@ -20,7 +20,6 @@
 
 import sys
 import os
-import urllib.request
 import latch
 
 
