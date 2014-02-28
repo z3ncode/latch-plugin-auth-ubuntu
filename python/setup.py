@@ -75,7 +75,7 @@ if os.path.isfile(PAM_CONFIG_FILE_2):
         f = open(PAM_CONFIG_FILE_2,"a")
         f.write(LATCH_PAM_CONFIG)
         f.close()
-'''
+
 if os.path.isfile(PAM_CONFIG_FILE_3): 
     # read openvpn PAM config file 3
     f = open(PAM_CONFIG_FILE_3,"r")
@@ -90,6 +90,59 @@ if os.path.isfile(PAM_CONFIG_FILE_3):
     if not found:
         # add latch PAM configuration
         f = open(PAM_CONFIG_FILE_3,"a")
+        f.write(LATCH_PAM_CONFIG)
+        f.close()
+
+if os.path.isfile(PAM_CONFIG_FILE_4): 
+    # read openvpn PAM config file 4
+    f = open(PAM_CONFIG_FILE_4,"r")
+    lines = f.readlines()
+    f.close()
+    # find latch 
+    found = False
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) != -1 :
+            found = True
+            break
+    if not found:
+        # add latch PAM configuration
+        f = open(PAM_CONFIG_FILE_4,"a")
+        f.write(LATCH_PAM_CONFIG)
+        f.close()
+
+
+if os.path.isfile(PAM_CONFIG_FILE_5): 
+    # read openvpn PAM config file 5
+    f = open(PAM_CONFIG_FILE_5,"r")
+    lines = f.readlines()
+    f.close()
+    # find latch 
+    found = False
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) != -1 :
+            found = True
+            break
+    if not found:
+        # add latch PAM configuration
+        f = open(PAM_CONFIG_FILE_5,"a")
+        f.write(LATCH_PAM_CONFIG)
+        f.close()
+
+'''
+if os.path.isfile(PAM_CONFIG_FILE_6): 
+    # read openvpn PAM config file 6
+    f = open(PAM_CONFIG_FILE_6,"r")
+    lines = f.readlines()
+    f.close()
+    # find latch 
+    found = False
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) != -1 :
+            found = True
+            break
+    if not found:
+        # add latch PAM configuration
+        f = open(PAM_CONFIG_FILE_6,"a")
         f.write(LATCH_PAM_CONFIG)
         f.close()
 '''

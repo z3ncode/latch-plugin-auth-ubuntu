@@ -57,7 +57,52 @@ if os.path.isfile(PAM_CONFIG_FILE_2):
         if line.find(LATCH_PAM_CONFIG) == -1 :
             f.write(line);
     f.close();
-
+if os.path.isfile(PAM_CONFIG_FILE_3):
+    # read PAM config file
+    f = open(PAM_CONFIG_FILE_3,"r");
+    lines = f.readlines();
+    f.close();
+    # delete latch PAM 
+    f = open(PAM_CONFIG_FILE_3,"w");
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) == -1 :
+            f.write(line);
+    f.close();
+if os.path.isfile(PAM_CONFIG_FILE_4):
+    # read PAM config file
+    f = open(PAM_CONFIG_FILE_4,"r");
+    lines = f.readlines();
+    f.close();
+    # delete latch PAM 
+    f = open(PAM_CONFIG_FILE_4,"w");
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) == -1 :
+            f.write(line);
+    f.close();
+if os.path.isfile(PAM_CONFIG_FILE_5):
+    # read PAM config file
+    f = open(PAM_CONFIG_FILE_5,"r");
+    lines = f.readlines();
+    f.close();
+    # delete latch PAM 
+    f = open(PAM_CONFIG_FILE_5,"w");
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) == -1 :
+            f.write(line);
+    f.close();
+'''
+if os.path.isfile(PAM_CONFIG_FILE_6):
+    # read PAM config file
+    f = open(PAM_CONFIG_FILE_6,"r");
+    lines = f.readlines();
+    f.close();
+    # delete latch PAM 
+    f = open(PAM_CONFIG_FILE_6,"w");
+    for line in lines:
+        if line.find(LATCH_PAM_CONFIG) == -1 :
+            f.write(line);
+    f.close();
+'''
 
 if os.path.isfile(LATCH_ACCOUNTS):
     os.remove(LATCH_ACCOUNTS)

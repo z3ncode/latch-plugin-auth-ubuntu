@@ -34,7 +34,11 @@ LATCH_HOST = "https://latch.elevenpaths.com"
 
 PAM_CONFIG_FILE_1 = "/etc/pam.d/lightdm"
 PAM_CONFIG_FILE_2 = "/etc/pam.d/lightdm-autologin"
-# PAM_CONFIG_FILE_3 = "/etc/pam.d/gnome-screensaver"
+PAM_CONFIG_FILE_3 = "/etc/pam.d/gnome-screensaver"
+PAM_CONFIG_FILE_4 = "/etc/pam.d/gdm"
+PAM_CONFIG_FILE_5 = "/etc/pam.d/gdm-autologin"
+# PAM_CONFIG_FILE_6 = "/etc/pam.d/gnome-screensaver"
+
 
 LATCH_PAM_SO = "/lib/security/pam_latch.so"
 
