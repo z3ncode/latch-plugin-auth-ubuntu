@@ -26,7 +26,6 @@
 import easygui as eg
 import sys
 import os
-import urllib.request
 
 from latchHelper import *
 
