@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+cd python/
+find latch.conf
+sudo python setup.py -f latch.conf
+cd ../include/
+gcc wrapper_pair.c -o pairSYS
+gcc wrapper_unpair.c -o unpairSYS
+gcc wrapper_latchPluginGUI.c -o latchSYS
+gcc wrapper_settings.c -o config_latchSYS
+sudo chown root:root pairSYS unpairSYS latchSYS config_latchSYS
+sudo mv pairSYS /usr/bin/
+sudo mv unpairSYS /usr/bin/
+sudo mv latchSYS /usr/bin/
+sudo mv config_latchSYS /usr/sbin/
+sudo chmod 4111 /usr/bin/latchSYS /usr/bin/pairSYS /usr/bin/unpairSYS
+sudo chmod 0100 /usr/sbin/config_latchSYS
+cd ../pam/libpam/
+sudo make
+cd ../../easyGUI/
+sudo python setup.py install
