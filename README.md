@@ -2,7 +2,7 @@
 
 
 ##PREREQUISITES
-* Ubuntu version 10 or later.
+* Ubuntu 10.x/11.x/12.x/13.x.
 
 * Python
 
